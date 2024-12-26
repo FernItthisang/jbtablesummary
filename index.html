@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Summary</title>
+    <style>
+ /* General body styling */
+body {
+    margin: 40px;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Section container */
+#daily-summary-container,
+#weekly-summary-container,
+#monthly-summary-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack tabs and table */
+}
+
+/* Tabs container */
+#daily-tabs-container,
+#weekly-tabs-container {
+    max-height: 60px;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start; /* Align tabs to the start */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%; /* Match the table width */
+    padding: 5px 0; /* Add some padding for better appearance */
+    box-sizing: border-box; /* Ensure padding doesn't break layout */
+}
+
+/* Tab buttons */
+#daily-tabs-container button,
+#weekly-tabs-container button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    white-space: nowrap; /* Prevent wrapping */
+    min-width: 100px; /* Ensure consistent button size */
+    max-height: 40px;
+}
+
+/* Active tab */
+button.active-tab {
+    font-weight: bold;
+    background-color: #ddd;
+}
+
+/* Scrollable table container */
+#daily-tables-container,
+#weekly-tables-container,
+#monthly-summary-container table {
+    flex-grow: 1; /* Allow the table container to fill remaining space */
+    overflow-y: auto; /* Enable vertical scrolling for the table */
+    margin: 0; /* Remove margins for better alignment */
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Smooth scrolling (optional) */
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+    <h1>Production Summary</h1>
+    <div id="daily-summary-container"></div>
+    <div id="weekly-summary-container"></div>
+    <div id="monthly-summary-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
